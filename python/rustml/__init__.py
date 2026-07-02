@@ -1,3 +1,3 @@
-from ._rustml import sum_as_string
+from ._rustml import Matrix, sum_as_string
 
-__all__ = ["sum_as_string"]
+__all__ = ["Matrix", "sum_as_string"]
