@@ -1,0 +1,17 @@
+[package]
+name = "rustml"
+version = "0.1.0"
+edition = "2021"
+description = "Machine learning primitives implemented in Rust, exposed to Python"
+
+[lib]
+name = "_rustml"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.23", features = ["extension-module"] }
+numpy = "0.23"
+ndarray = "0.16"
+
+[profile.release]
+lto = true

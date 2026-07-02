@@ -1,0 +1,28 @@
+[build-system]
+requires = ["maturin>=1.7,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "rustml"
+version = "0.1.0"
+description = "Machine learning from scratch, written mostly in Rust"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+]
+dependencies = [
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "maturin>=1.7,<2.0",
+]
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+module-name = "rustml._rustml"
+python-source = "python"

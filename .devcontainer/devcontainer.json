@@ -1,0 +1,20 @@
+{
+  "name": "rustml (Rust + Python + maturin)",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "target": "dev"
+  },
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "ms-python.python",
+        "tamasfe.even-better-toml"
+      ]
+    }
+  },
+  "postCreateCommand": "maturin develop --extras dev",
+  "remoteUser": "root"
+}
